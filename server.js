@@ -21,9 +21,9 @@ const client = new MongoClient(uri);
 app.get('/', (req, res) => {
     const db = client.db(dbName);
     const collection = db.collection('Blocks');
-    collection.find({}).toArray(function (err, device_list) {
+    collection.find({}).toArray(function (err, block) {
         assert.strictEqual(err, null);
-        res.render('index', { 'devices': device_list });
+        res.render('index', { 'blocks': block });
     })
 })
 
