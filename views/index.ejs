@@ -1,39 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <link type="text/css" rel='stylesheet' href='/css/stylesheet.css' />
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="../public/stylesheets/stylesheet.css">
+
 
     <title>Avalanche C-Chain Fees Tracker</title>
 </head>
+
 <body>
-    
+
+    <div class="wrapper">
 
 
-      <div class="wrapper">
 
         <%- include('../views/partials/header.ejs') %>
 
 
-        <ul>
-            <% devices.forEach(function(device){ %>
-                <li>
-                     <%= device.hash %> 
-                     <%= device._id %> 
-                     <%= device.time %> 
-                     <%= device.burnedFees %> AVAX
-                </li>
-                <% }); %>
-          </ul>
-        
 
-        
-        <%- include('../views/partials/footer.ejs') %>
+
+            <%- include('../views/partials/footer.ejs') %>
     </div>
 
 
+
+
+    <table class="table">
+        <tr>
+            <% devices.forEach(function(device){ %>
+                <td>
+                    <%= device._id %>
+                </td>
+
+                <th>
+                    <%= device.hash %>
+                        <%= device.time %>
+
+                </th>
+                <td>
+                    <%= device.burnedFees %> AVAX
+
+                </td>
+
+        </tr>
+
+        <% }); %>
+    </table>
+
 </body>
+
 </html>

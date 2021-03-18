@@ -1,22 +1,22 @@
+//Imports
 const express = require('express');
 const app = express();
 const ejs = require('ejs');
-
-app.set('view engine', 'ejs');
-
 const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
+const { uri } = require('./server/database/db_connector');  //database uri
+const { setDbName } = require('./server/controllers/dbController'); //database db name
 
-const { uri } = require('./server/database/db_connector');
-const { setDbName } = require('./server/controllers/dbController');
+//EJS settings
+app.set('view engine', 'ejs');
+app.use(express.static(__dirname + '/public'));
 
 //set DB  Name
 let dbName;
 dbName = setDbName(dbName);
 
-
+//client 
 const client = new MongoClient(uri);
-
 
 app.get('/', (req, res) => {
     const db = client.db(dbName);
@@ -26,7 +26,6 @@ app.get('/', (req, res) => {
         res.render('index', { 'devices': device_list });
     })
 })
-
 
 client.connect(function (err) {       //first check db connection, then 
     assert.strictEqual(null, err);
