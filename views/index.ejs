@@ -1,0 +1,10 @@
+<ul>
+    <% devices.forEach(function(device){ %>
+        <li>
+             <%= device.hash %> 
+             <%= device._id %> 
+             <%= device.time %> 
+             <%= device.burnedFees %> AVAX
+        </li>
+        <% }); %>
+  </ul>
