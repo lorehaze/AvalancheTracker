@@ -26,11 +26,18 @@
             <%- include('../views/partials/footer.ejs') %>
     </div>
 
+    <table class="table">
+
+    </table>
 
 
 
     <table class="table">
         <tr>
+            <td>Block Number</td>
+            <td>Hash and Data</td>
+            <td>Burned Fees</td>
+            </tr><tr>
             <% devices.forEach(function(device){ %>
                 <td>
                     <%= device._id %>
