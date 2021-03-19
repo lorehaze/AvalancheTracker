@@ -30,9 +30,8 @@ const client = new MongoClient(uri);
 })*/
 
 
-app.get('/', async (req,res) => {
-   addBlockToDB();
-   //setInterval(async() =>  await addBlockToDB(), 2000); 
+/*app.get('/', async (req,res) => {
+   setInterval(async() =>  await addBlockToDB(), 2000); 
 
    const db = client.db(dbName);
         const collection = db.collection('Blocks');
@@ -40,9 +39,18 @@ app.get('/', async (req,res) => {
          assert.strictEqual(err, null);
          res.render('index', { 'blocks': block });
      }) 
+})*/
 
-
-})
+app.get('/', async (req,res) => {
+    //setInterval(async() =>  await addBlockToDB(), 2000); 
+ 
+    const db = client.db(dbName);
+         const collection = db.collection('Blocks');
+         collection.find({}).toArray(function (err, block) {
+          assert.strictEqual(err, null);
+          res.render('index', { 'blocks': block });
+      }) 
+ })
 
 client.connect(function (err) {       //first check db connection, then 
     assert.strictEqual(null, err);

@@ -1,3 +1,7 @@
+ body {
+   background-color: ghostwhite;
+ }
+ 
  .wrapper {
     width: 700px;
     margin: 0 auto;
@@ -28,8 +32,6 @@
     font-weight: bold;
   }
   
-
-
 
 
 

@@ -5,12 +5,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/bootstrap-table.min.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <script src="//code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
+
+    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+        integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/bootstrap-table.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/locale/bootstrap-table-en-US.min.js"></script>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet"
         href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
         integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
 
-    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+
+
     <link type="text/css" rel='stylesheet' href='/css/stylesheet.css' />
 
 
@@ -22,36 +41,51 @@
     <%- include('../views/partials/header.ejs') %>
         <%- include('../views/partials/footer.ejs') %>
 
-            <table class="table table-hover mt-5 bt-5" id="myTable">
-                <thead class="thead-light">
-                    <tr>
-                        <th span style="font-weight: bold" scope="col">Block</th>
-                        <th span style="font-weight: bold" scope="col">Hash</th>
-                        <th span style="font-weight: bold" scope="col">Date</th>
-                        <th span style="font-weight: bold" scope="col">Burned Fees</th>
-                    </tr>
-                </thead>
-                <tr>
-                    <% blocks.forEach(function(block){ %>
-                        <td>
-                            <%= block._id %>
-                        </td>
+            <div class="container">
+                <table class="table table-hover" id="dataTable" data-height="400" data-show-columns="true"
+                    data-toggle="table" data-search="true" data-show-export="true" data-pagination="true"
+                    data-click-to-select="true" data-toolbar="#toolbar" data-page-size="20" data-show-columns="true">
+                    <thead class="thead-light">
+                        <tr>
+                            <th span style="font-weight: bold" scope="col">Block</th>
+                            <th span style="font-weight: bold" scope="col">Hash</th>
+                            <th span style="font-weight: bold" scope="col">Date</th>
+                            <th span style="font-weight: bold" scope="col">Burned Fees</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <% blocks.forEach(function(block){ %>
+                                <td>
+                                    <%= block._id %>
+                                </td>
 
-                        <td>
-                            <%= block.hash %>
-                        </td>
-                        <td>
-                            <%= block.time %>
-                        </td>
-                        <td>
-                            <%= block.burnedFees %> AVAX
+                                <td>
+                                    <%= block.hash %>
+                                </td>
+                                <td>
+                                    <%= block.time %>
+                                </td>
+                                <td>
+                                    <%= block.burnedFees %> AVAX
 
-                        </td>
+                                </td>
+                        </tr>
+                    </tbody>
 
-                </tr>
+                    <% }); %>
+                </table>
+            </div>
 
-                <% }); %>
-            </table>
+
+            <!--Bootstrap DataTable settings-->
+            <script>
+                $('#dataTable').bootstrapTable({
+                    pagination: true,
+                    pageSize: 3, //your page size here
+                    pageList: [25, 50, 75, 100],//list of page sizes
+                });
+            </script>
 
 
             <!--JS Includes for Bootstrap-->
@@ -66,16 +100,6 @@
                 crossorigin="anonymous"></script>
             <script>$(document).ready(function () { $('body').bootstrapMaterialDesign(); });</script>
 
-
-            <script>
-
-                $(document).ready(function () {
-                    $('#myTable').DataTable({
-                        "pagingType": "full_numbers"
-                    });
-                });
-
-            </script>
 
 
 </body>
