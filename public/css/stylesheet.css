@@ -26,16 +26,85 @@
     left: 35%;
     position: absolute;
   }
-
-  th {
-    text-align: center;
-    font-weight: bold;
-  }
   
+#dataTable {
+  font-size: auto;
+  text-align: center;
+}
 
+#thead-light{
+text-align: center;
+}
 
+.table,td{
+  text-align: center;
+}
 
+h1 {
+  font-size: 70px;
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
 
+h2,p {
+font-size: 50px;
+margin-bottom: 0px;
+margin-top: 30px;
+}
+
+.button {
+  margin-top: 40px;
+  position: relative;
+  background-color: #1cd6e4;
+  border: turquoise;
+  font-size: 28px;
+  color: #FFFFFF;
+  padding: 10px;
+  width: 200px;
+  text-align: center;
+  transition-duration: 0.4s;
+  text-decoration: forestgreen;
+  overflow:scroll;
+  cursor: pointer;
+  border-radius: 20px 20px 20px 20px;
+}
+
+.button:hover,
+.button:focus,
+.button:active,
+.button.active{
+  margin-top: 40px;
+  position: relative;
+  background-color: rgb(74, 236, 74);
+  border: turquoise;
+  font-size: 28px;
+  color: #FFFFFF;
+  padding: 10px;
+  width: 200px;
+  text-align: center;
+  transition-duration: 0.4s;
+  text-decoration: forestgreen;
+  overflow:scroll;
+  cursor: pointer;
+  border-radius: 10px 10px 10px 10px;
+}
+
+.button:active{
+  margin-top: 40px;
+  position: relative;
+  background-color: blue;
+  border: turquoise;
+  font-size: 28px;
+  color: #FFFFFF;
+  padding: 10px;
+  width: 200px;
+  text-align: center;
+  transition-duration: 0.4s;
+  text-decoration: forestgreen;
+  overflow:scroll;
+  cursor: pointer;
+  border-radius: 20px 20px 20px 20px;
+}
 
 
 

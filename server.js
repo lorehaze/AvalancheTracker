@@ -52,6 +52,10 @@ app.get('/', async (req,res) => {
       }) 
  })
 
+app.get('/about', (req,res) => {
+    res.render('about');
+})
+
 client.connect(function (err) {       //first check db connection, then 
     assert.strictEqual(null, err);
     console.log('Successfully connected to server.');

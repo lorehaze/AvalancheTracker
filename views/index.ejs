@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 
-
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
 
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/bootstrap-table.min.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -42,15 +42,15 @@
         <%- include('../views/partials/footer.ejs') %>
 
             <div class="container">
-                <table class="table table-hover" id="dataTable" data-height="400" data-show-columns="true"
-                    data-toggle="table" data-search="true" data-show-export="true" data-pagination="true"
-                    data-click-to-select="true" data-toolbar="#toolbar" data-page-size="20" data-show-columns="true">
+                <table class="table table-hover" id="dataTable" data-height="600" data-toggle="table" data-search="true"
+                    data-show-export="true" data-pagination="true" data-click-to-select="true" data-toolbar="#toolbar"
+                    data-page-size='14' data-show-columns="true" data-sort-name="block" data-sort-order="desc">
                     <thead class="thead-light">
                         <tr>
-                            <th span style="font-weight: bold" scope="col">Block</th>
-                            <th span style="font-weight: bold" scope="col">Hash</th>
-                            <th span style="font-weight: bold" scope="col">Date</th>
-                            <th span style="font-weight: bold" scope="col">Burned Fees</th>
+                            <th data-field="block"scope="col">Block</th>
+                            <th scope="col">Hash</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Burned Fees</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -71,9 +71,8 @@
 
                                 </td>
                         </tr>
+                        <% }); %>
                     </tbody>
-
-                    <% }); %>
                 </table>
             </div>
 
@@ -82,8 +81,8 @@
             <script>
                 $('#dataTable').bootstrapTable({
                     pagination: true,
-                    pageSize: 3, //your page size here
                     pageList: [25, 50, 75, 100],//list of page sizes
+                    
                 });
             </script>
 
