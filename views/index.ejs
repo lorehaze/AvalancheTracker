@@ -76,14 +76,11 @@
 
             <!--Bootstrap DataTable settings-->
             <script>
-                $('#dataTable').bootstrapTable({
+                $('#dataTable').bootstrapTable('refresh', {
                     pagination: true,
                     pageList: [25, 50, 75, 100],//list of page sizes
                 });
-
-                $('#dataTable').data.reload();
             </script>
-
 
 
 
