@@ -32,7 +32,7 @@ const client = new MongoClient(uri);
 
 app.get('/', async (req,res) => {
    addBlockToDB();
-   setInterval(async() =>  await addBlockToDB(), 2000); 
+   //setInterval(async() =>  await addBlockToDB(), 2000); 
 
    const db = client.db(dbName);
         const collection = db.collection('Blocks');

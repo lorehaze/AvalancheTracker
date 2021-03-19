@@ -21,8 +21,9 @@ const addBlockToDB = async () => {
                 "_id": block.blockNumber,
                 "hash": block.hash,
                 "burnedFees": block.burnedAvax,
-                "time": Date()
-            }
+                //"time": Date()
+            },
+            $currentDate: { time : true}
         }
         const filter = { "_id": block.blockNumber };    //filter per blockId
         dbo.collection("Blocks").updateOne(filter, dbData, { upsert: true });
