@@ -32,6 +32,8 @@
 
     <link type="text/css" rel='stylesheet' href='/css/stylesheet.css' />
 
+    <!-- <meta http-equiv="refresh" content="3" />   -->
+
 
     <title>Avalanche C-Chain Fees Tracker</title>
 </head>
@@ -47,7 +49,7 @@
                     data-page-size='14' data-show-columns="true" data-sort-name="block" data-sort-order="desc">
                     <thead class="thead-light">
                         <tr>
-                            <th data-field="block"scope="col">Block</th>
+                            <th data-field="block" scope="col">Block</th>
                             <th scope="col">Hash</th>
                             <th scope="col">Date</th>
                             <th scope="col">Burned Fees</th>
@@ -82,9 +84,24 @@
                 $('#dataTable').bootstrapTable({
                     pagination: true,
                     pageList: [25, 50, 75, 100],//list of page sizes
-                    
+
                 });
             </script>
+
+            <script>
+
+                $(document).ready(function () {
+                    setInterval(function () {
+                        cache_clear()
+                    }, 3000);
+                });
+
+                function cache_clear() {
+                    window.location.reload(true);
+                    // window.location.reload(); use this if you do not remove cache
+                }
+            </script>
+
 
 
             <!--JS Includes for Bootstrap-->
