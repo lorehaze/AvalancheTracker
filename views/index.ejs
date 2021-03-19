@@ -20,14 +20,6 @@
         integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/bootstrap-table.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/locale/bootstrap-table-en-US.min.js"></script>
-
-
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet"
-        href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
-        integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
-
 
 
     <link type="text/css" rel='stylesheet' href='/css/stylesheet.css' />
@@ -44,9 +36,12 @@
         <%- include('../views/partials/footer.ejs') %>
 
             <div class="container">
-                <table class="table table-hover" id="dataTable" data-height="600" data-toggle="table" data-search="true"
-                    data-show-export="true" data-pagination="true" data-click-to-select="true" data-toolbar="#toolbar"
-                    data-page-size='14' data-show-columns="true" data-sort-name="block" data-sort-order="desc">
+                <table class="table table-hover d-print-table-row" id="dataTable" data-height="600" data-toggle="table"
+                    data-search="true" data-show-export="true" data-pagination="true" data-click-to-select="true"
+                    data-toolbar="#toolbar" data-page-size='14' data-show-columns="true" data-sort-name="block"
+                    data-sort-order="desc" border="0" cellpadding="0" cellspacing="0" autoRefresh="true"
+                    autoRefreshStatus="true" data-show-refresh="true" autoRefreshInterval="3"
+                    data-auto-refresh-interval="1000">
                     <thead class="thead-light">
                         <tr>
                             <th data-field="block" scope="col">Block</th>
@@ -84,37 +79,13 @@
                 $('#dataTable').bootstrapTable({
                     pagination: true,
                     pageList: [25, 50, 75, 100],//list of page sizes
-
-                });
-            </script>
-
-            <script>
-
-                $(document).ready(function () {
-                    setInterval(function () {
-                        cache_clear()
-                    }, 3000);
                 });
 
-                function cache_clear() {
-                    window.location.reload(true);
-                    // window.location.reload(); use this if you do not remove cache
-                }
+                $('#dataTable').data.reload();
             </script>
 
 
 
-            <!--JS Includes for Bootstrap-->
-            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-                integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-                crossorigin="anonymous"></script>
-            <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"
-                integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U"
-                crossorigin="anonymous"></script>
-            <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"
-                integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9"
-                crossorigin="anonymous"></script>
-            <script>$(document).ready(function () { $('body').bootstrapMaterialDesign(); });</script>
 
 
 
