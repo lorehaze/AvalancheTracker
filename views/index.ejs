@@ -7,27 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/bootstrap-table.min.css">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.2/dist/bootstrap-table.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
-    <script src="//code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 
-    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
         integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/bootstrap-table.min.js"></script>
-
+        <script src="https://unpkg.com/bootstrap-table@1.18.2/dist/bootstrap-table.min.js"></script>
 
     <link type="text/css" rel='stylesheet' href='/css/stylesheet.css' />
 
-    <!-- <meta http-equiv="refresh" content="3" />   -->
-
-
     <title>Avalanche C-Chain Fees Tracker</title>
+
 </head>
 
 <body>
@@ -36,12 +33,10 @@
         <%- include('../views/partials/footer.ejs') %>
 
             <div class="container">
-                <table class="table table-hover d-print-table-row" id="dataTable" data-height="600" data-toggle="table"
+                <table class="table table-hover " id="dataTable"  data-height="600" data-toggle="table"
                     data-search="true" data-show-export="true" data-pagination="true" data-click-to-select="true"
                     data-toolbar="#toolbar" data-page-size='14' data-show-columns="true" data-sort-name="block"
-                    data-sort-order="desc" border="0" cellpadding="0" cellspacing="0" autoRefresh="true"
-                    autoRefreshStatus="true" data-show-refresh="true" autoRefreshInterval="3"
-                    data-auto-refresh-interval="1000">
+                    data-sort-order="desc">
                     <thead class="thead-light">
                         <tr>
                             <th data-field="block" scope="col">Block</th>
@@ -76,7 +71,7 @@
 
             <!--Bootstrap DataTable settings-->
             <script>
-                $('#dataTable').bootstrapTable('refresh', {
+                $('#dataTable').bootstrapTable({}, {
                     pagination: true,
                     pageList: [25, 50, 75, 100],//list of page sizes
                 });

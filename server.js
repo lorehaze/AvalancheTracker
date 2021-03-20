@@ -8,7 +8,6 @@ const { uri } = require('./server/database/db_connector');  //database uri
 const { setDbName } = require('./server/controllers/dbController'); //database db name
 const { addBlockToDB } = require('./server/controllers/dbController');
 
-
 //EJS settings
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
@@ -21,7 +20,7 @@ dbName = setDbName(dbName);
 const client = new MongoClient(uri);
 
 app.get('/', async (req, res) => {
-    setInterval(async () => await addBlockToDB(), 2000);
+  setInterval(async () => await addBlockToDB(), 2000);
 
     const db = client.db(dbName);
     const collection = db.collection('Blocks');

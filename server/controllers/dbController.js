@@ -16,18 +16,20 @@ const addBlockToDB = async () => {
 
         let block = await getBlock();
         var dbo = db.db("Avalanche");
-         dbData = {
+
+        //Structure to push into db
+        dbData = {
             $set: {
                 "_id": block.blockNumber,
                 "hash": block.hash,
-                "burnedFees": block.burnedAvax,
-                //"time": Date()
+                "burnedFees": block.burnedAvax
             },
-            $currentDate: { time : true}
+            $currentDate: { time: true }
         }
+
         const filter = { "_id": block.blockNumber };    //filter per blockId
         dbo.collection("Blocks").updateOne(filter, dbData, { upsert: true });
-        db.close();
+        db.close(); //close connection
     })
 }
 
