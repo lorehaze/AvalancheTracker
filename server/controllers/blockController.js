@@ -16,7 +16,6 @@ const getBlock = async () => {
     let gasUsed = web3.utils.hexToNumber(block.gasUsed);    //get gas used
     let blockNumber = block.number; //get block number
     let burnedAvax = feesCalculator(gasUsed);   //calculate burned fees
-
     //Return as object
     return {
         hash,
