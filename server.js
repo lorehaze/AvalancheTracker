@@ -39,7 +39,6 @@ app.get('/', async (req, res) => {
             })                 //DEBUG Line
         }, 5000);
 
-
         res.render('index', {
             'blocks': block,
             'fees': totalBurned
