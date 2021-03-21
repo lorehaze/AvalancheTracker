@@ -19,7 +19,7 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
         integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
 
-        <script src="https://unpkg.com/bootstrap-table@1.18.2/dist/bootstrap-table.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.18.2/dist/bootstrap-table.min.js"></script>
 
     <link type="text/css" rel='stylesheet' href='/css/stylesheet.css' />
 
@@ -32,8 +32,12 @@
     <%- include('../views/partials/header.ejs') %>
         <%- include('../views/partials/footer.ejs') %>
 
+            <h4> Total Burned Fees:
+                <%= fees %> AVAX
+            </h4>
+
             <div class="container">
-                <table class="table table-hover " id="dataTable"  data-height="600" data-toggle="table"
+                <table class="table table-hover " id="dataTable" data-height="600" data-toggle="table"
                     data-search="true" data-show-export="true" data-pagination="true" data-click-to-select="true"
                     data-toolbar="#toolbar" data-page-size='14' data-show-columns="true" data-sort-name="block"
                     data-sort-order="desc">
@@ -68,13 +72,11 @@
                 </table>
             </div>
 
-
-
             <!--Bootstrap DataTable settings-->
             <script>
                 $('#dataTable').bootstrapTable({}, {
                     pagination: true,
-                    pageList: [25, 50, 75, 100],//list of page sizes
+                    pageList: [25, 50, 75, 100], //list of page sizes
                 });
             </script>
 

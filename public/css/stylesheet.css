@@ -1,113 +1,119 @@
  body {
-   background-color: ghostwhite;
+     background-color: ghostwhite;
  }
  
  .wrapper {
-    width: 700px;
-    margin: 0 auto;
-    padding: 10px;
-  }
-  
-  header, footer {
-    padding: 20px;
-    border-radius: 40px;
-  }
-  
-  header {
-    font-size: 40px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-style:inherit;
-    font-weight:bold;
-  }
-  
-  footer {
-    font-size: 20px;
-    bottom: 0;
-    left: 35%;
-    position: absolute;
-  }
-  
-#dataTable {
-  font-size: auto;
-  text-align: center;
-}
-
-#thead-light{
-text-align: center;
-}
-
-.table,td{
-  text-align: center;
-}
-
-h1 {
-  font-size: 70px;
-  margin-top: 30px;
-  margin-bottom: 60px;
-}
-
-h2,p {
-font-size: 50px;
-margin-bottom: 0px;
-margin-top: 30px;
-}
-
-.button {
-  margin-top: 40px;
-  position: relative;
-  background-color: #1cd6e4;
-  border: turquoise;
-  font-size: 28px;
-  color: #FFFFFF;
-  padding: 10px;
-  width: 200px;
-  text-align: center;
-  transition-duration: 0.4s;
-  text-decoration: forestgreen;
-  overflow:scroll;
-  cursor: pointer;
-  border-radius: 20px 20px 20px 20px;
-}
-
-.button:hover,
-.button:focus,
-.button:active,
-.button.active{
-  margin-top: 40px;
-  position: relative;
-  background-color: rgb(74, 236, 74);
-  border: turquoise;
-  font-size: 28px;
-  color: #FFFFFF;
-  padding: 10px;
-  width: 200px;
-  text-align: center;
-  transition-duration: 0.4s;
-  text-decoration: forestgreen;
-  overflow:scroll;
-  cursor: pointer;
-  border-radius: 10px 10px 10px 10px;
-}
-
-.button:active{
-  margin-top: 40px;
-  position: relative;
-  background-color: blue;
-  border: turquoise;
-  font-size: 28px;
-  color: #FFFFFF;
-  padding: 10px;
-  width: 200px;
-  text-align: center;
-  transition-duration: 0.4s;
-  text-decoration: forestgreen;
-  overflow:scroll;
-  cursor: pointer;
-  border-radius: 20px 20px 20px 20px;
-}
-
-
-
-
-
-  
+     width: 700px;
+     margin: 0 auto;
+     padding: 10px;
+ }
+ 
+ header,
+ footer {
+     padding: 20px;
+     border-radius: 40px;
+     margin-bottom: 0%;
+     margin-top: 0%;
+ }
+ 
+ header {
+     font-size: 40px;
+     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+     font-style: inherit;
+     font-weight: bold;
+ }
+ 
+ footer {
+     font-size: 20px;
+     bottom: 0;
+     left: 35%;
+     position: absolute;
+ }
+ 
+ #dataTable {
+     font-size: auto;
+     text-align: center;
+ }
+ 
+ #thead-light {
+     text-align: center;
+ }
+ 
+ .table,
+ td {
+     text-align: center;
+ }
+ 
+ h1 {
+     font-size: 70px;
+     margin-top: 30px;
+     margin-bottom: 60px;
+ }
+ 
+ h2,
+ p {
+     font-size: 50px;
+     margin-bottom: 0px;
+     margin-top: 30px;
+ }
+ 
+ .button {
+     margin-top: 40px;
+     position: relative;
+     background-color: #1cd6e4;
+     border: turquoise;
+     font-size: 28px;
+     color: #FFFFFF;
+     padding: 10px;
+     width: 200px;
+     text-align: center;
+     transition-duration: 0.4s;
+     text-decoration: forestgreen;
+     overflow: scroll;
+     cursor: pointer;
+     border-radius: 20px 20px 20px 20px;
+ }
+ 
+ .button:hover,
+ .button:focus,
+ .button:active,
+ .button.active {
+     margin-top: 40px;
+     position: relative;
+     background-color: rgb(74, 236, 74);
+     border: turquoise;
+     font-size: 28px;
+     color: #FFFFFF;
+     padding: 10px;
+     width: 200px;
+     text-align: center;
+     transition-duration: 0.4s;
+     text-decoration: forestgreen;
+     overflow: scroll;
+     cursor: pointer;
+     border-radius: 10px 10px 10px 10px;
+ }
+ 
+ .button:active {
+     margin-top: 40px;
+     position: relative;
+     background-color: blue;
+     border: turquoise;
+     font-size: 28px;
+     color: #FFFFFF;
+     padding: 10px;
+     width: 200px;
+     text-align: center;
+     transition-duration: 0.4s;
+     text-decoration: forestgreen;
+     overflow: scroll;
+     cursor: pointer;
+     border-radius: 20px 20px 20px 20px;
+ }
+ 
+ h4 {
+     font-size: 10px;
+     margin-bottom: 0%;
+     text-align: center;
+     font-weight: bold;
+ }

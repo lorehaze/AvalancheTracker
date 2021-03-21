@@ -14,11 +14,13 @@ app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
 
 //set DB  Name
-let dbName;
+var dbName;
 dbName = setDbName(dbName);
-let totalBurned; 
+var totalBurned;
+
 //client 
 const client = new MongoClient(uri);
+
 
 app.get('/', async (req, res) => {
     setInterval(async () => await addBlockToDB(), 2000);
@@ -32,15 +34,18 @@ app.get('/', async (req, res) => {
         setInterval(() => {
             collection.find({}).toArray(function (err, block) {
                 assert.strictEqual(err, null);
-            let totalBurned = countFees(block);
-            console.log(totalBurned);})                 //local variable -> try to expose to ejs
-        },3000);
+                totalBurned = countFees(block);
+                console.log(totalBurned);
+            })                 //DEBUG Line
+        }, 5000);
 
-        res.render('index', { 'blocks': block });
+
+        res.render('index', {
+            'blocks': block,
+            'fees': totalBurned
+        });
     })
 })
-
-
 
 
 app.get('/about', (req, res) => {

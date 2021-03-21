@@ -9,7 +9,6 @@ const countFees = (array) => {
         total = total + valArray[j];
     }
     return total;
-
 }
 
 module.exports = {

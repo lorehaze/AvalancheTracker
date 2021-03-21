@@ -1,4 +1,4 @@
-const { setConnection} = require('./providerController');
+const { setConnection } = require('./providerController');
 
 //Burned Avax Calculator
 const feesCalculator = (_gasUsed) => {
